@@ -1,0 +1,20 @@
+.hover-border {
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.hover-border::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: transparent;
+  transition: width 0.3s ease-in-out;
+}
+
+.hover-border:hover::after {
+  width: 100%;
+  background-color: #1d4ed8;
+}
