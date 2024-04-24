@@ -6,49 +6,33 @@ export const baseApi = createApi({
   tagTypes: ["phone"],
   endpoints: (builder) => ({
     getAllPhones: builder.query({
-      query: () => ({
-        url: "",
-        method: "GET",
-      }),
+      query: () => "",
+      providesTags: ["phone"],
     }),
-
-    // getTodos: builder.query({
-    //   query: (priority) => {
-    //     const params = new URLSearchParams();
-
-    //     if (priority) {
-    //       params.append("priority", priority);
-    //     }
-
-    //     return {
-    //       url: `/tasks`,
-    //       method: "GET",
-    //       params: { priority },
-    //     };
-    //   },
-    //   providesTags: ["todo"],
-    // }),
-
-    // addTodo: builder.mutation({
-    //   query: (data) => ({
-    //     url: "/task",
-    //     method: "POST",
-    //     body: data,
-    //   }),
-    //   invalidatesTags: ["todo"],
-    // }),
-    // updateTodo: builder.mutation({
-    //   query: (data) => {
-    //     console.log("inside base api =>", data);
-    //     return {
-    //       url: `/task/${data.id}`,
-    //       method: "PUT",
-    //       body: data.data,
-    //     };
-    //   },
-    //   invalidatesTags: ["todo"],
-    // }),
   }),
+
+  // extraReducers: (builder) => {
+  //   builder.addMatcher(updateQuantity.match, async (state, action) => {
+  //     console.log(state, action);
+  //     try {
+  //       const productId = action.payload.id;
+  //       const updatedQuantity = action.payload.quantity;
+
+  //       // Ensure data is loaded before accessing
+  //       await baseApi.endpoints.getAllPhones.query();
+
+  //       const productToUpdate = state.queries.getAllPhones.data.find(
+  //         (product) => product.id === productId
+  //       );
+
+  //       if (productToUpdate) {
+  //         productToUpdate.quantity = updatedQuantity;
+  //       }
+  //     } catch (error) {
+  //       console.error("Error updating quantity:", error);
+  //     }
+  //   });
+  // },
 });
 
 export const { useGetAllPhonesQuery } = baseApi;

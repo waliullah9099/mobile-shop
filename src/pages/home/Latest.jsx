@@ -8,6 +8,7 @@ import AddCart from "./AddCart";
 const Latest = () => {
   const [showAll, setShowAll] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+  // const [availableQuantity, setAvailableQuantity] = useState([]);
   const { data: phones } = useGetAllPhonesQuery(undefined);
   const selectedPhones = useSelector((store) => store.cart.products);
 

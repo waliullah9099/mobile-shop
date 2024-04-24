@@ -1,6 +1,6 @@
 ##### Welcome to my Mobile shop Website. It has designed by react.js, use redux.js for state management and tailwind for style.
 
-### Live Deployment Link: https://fresh-market-website-z7sp.vercel.app/
+### Live Deployment Link: https://mobile-shop-beta.vercel.app
 
 ### Technologies Used
 

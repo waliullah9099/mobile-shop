@@ -4,12 +4,17 @@ import HeartIcon from "../icons/HeartIcon";
 
 import { Rating, Star } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/features/cartSlice";
 
 /* eslint-disable react/prop-types */
 const PhoneCard = ({ phone }) => {
   const dispatch = useDispatch();
+  const selectedPhones = useSelector((store) => store.cart.products);
+
+  if (selectedPhones !== undefined) {
+    console.log(selectedPhones);
+  }
 
   const handleAddToCart = (phone) => {
     dispatch(addToCart(phone));
@@ -55,9 +60,7 @@ const PhoneCard = ({ phone }) => {
               <span className="text-gray-400">({phone?.totalRating})</span>
             </div>
           </div>
-          <p className="text-gray-400">
-            Qty: {phone.available - phone.quantity} pcs
-          </p>
+          <p className="text-gray-400">Qty: {phone.available} pcs</p>
         </div>
         <button
           onClick={() => handleAddToCart(phone)}

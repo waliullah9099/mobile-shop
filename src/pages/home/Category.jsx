@@ -11,10 +11,14 @@ const Category = () => {
     <div className="width">
       <h1 className="text-center font-semibold text-2xl">Popular Category</h1>
 
+      {/* All category card */}
       <div className="grid grid-cols-12 gap-8 mt-8">
+        {/* two columns card in first row  */}
         <div className="col-span-12 lg:col-span-4 ">
-          <div className="group bg-slate-700 px-8 pb:12 py-[60px] pb-8 pl-14 md:pl-8 rounded-md mb-3 relative">
+          {/* first column card in first row  */}
+          <div className="group bg-slate-700 px-8 pb:12 py-[60px] pb-8 pl-[66px] md:pl-8 rounded-md mb-3 relative">
             <div className="absolute top-1 right-3 group-hover:-rotate-45 card-hover group-hover:bg-primary group-hover:rounded-full p-2">
+              {/* import svg icon */}
               <RightArrow />
             </div>
             <img className="" src={image1} alt="Category Image" />
@@ -22,9 +26,10 @@ const Category = () => {
               Smart Phones
             </h2>
           </div>
-
+          {/* second column card in first row  */}
           <div className="group bg-blue-400 py-8 px-8 pl-14 md:pl-8 pb-4 md:pb-[22px] rounded-md relative">
             <div className="absolute top-0 right-2 group-hover:-rotate-45 card-hover group-hover:bg-primary group-hover:rounded-full p-2">
+              {/* import svg icon */}
               <RightArrow />
             </div>
             <img className="" src={image2} alt="Category Image" />
@@ -34,7 +39,9 @@ const Category = () => {
           </div>
         </div>
 
+        {/* two columns card in second row  */}
         <div className="col-span-12 lg:col-span-4">
+          {/* two rows in first column card in second row  */}
           <div className="grid grid-cols-2 gap-5">
             <div className="group bg-blue-400 rounded-md px-5 pt-8 pb-4 pl-[30px] md:pl-[22px]  relative">
               <div className="absolute top-0 right-1 group-hover:-rotate-45 card-hover group-hover:bg-primary group-hover:rounded-full p-2">
@@ -66,7 +73,7 @@ const Category = () => {
             </h2>
           </div>
         </div>
-
+        {/* one column card in third row  */}
         <div className="group col-span-12 lg:col-span-4 bg-blue-600 pt-12 pl-7  md:pl-6 rounded-md relative">
           <div className="absolute top-2 right-3 group-hover:-rotate-45 card-hover group-hover:bg-primary group-hover:rounded-full p-2">
             <RightArrow />
