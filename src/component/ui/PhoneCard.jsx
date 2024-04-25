@@ -4,27 +4,24 @@ import HeartIcon from "../icons/HeartIcon";
 
 import { Rating, Star } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/features/cartSlice";
 
 /* eslint-disable react/prop-types */
 const PhoneCard = ({ phone }) => {
   const dispatch = useDispatch();
-  const selectedPhones = useSelector((store) => store.cart.products);
-
-  if (selectedPhones !== undefined) {
-    console.log(selectedPhones);
-  }
 
   const handleAddToCart = (phone) => {
     dispatch(addToCart(phone));
   };
+  // rating component style
   const myStyles = {
     itemShapes: Star,
     activeFillColor: "hsla(32, 100%, 50%, 1)",
   };
   return (
     <div className="group p-5 hover:border- hover:shadow-2xl rounded-md px-8 py-y relative h-[485px] md:h-[470px]">
+      {/* icon for increment or decrement  */}
       <div className="space-y-5 absolute right-5 top-3 hidden group-hover:block transition-all delay-200 duration-500 ease-in-out">
         <PlusIcon />
         <HeartIcon />
@@ -49,6 +46,7 @@ const PhoneCard = ({ phone }) => {
         </div>
         <div className="flex justify-between">
           <div>
+            {/* show rating depent on the databage rating rate  */}
             <div className="flex gap-2">
               <Rating
                 style={{ maxWidth: 140 }}
@@ -63,6 +61,7 @@ const PhoneCard = ({ phone }) => {
           <p className="text-gray-400">Qty: {phone.available} pcs</p>
         </div>
         <button
+          // handle add to card when click this button
           onClick={() => handleAddToCart(phone)}
           className="absolute bottom-5 left-6 w-[88%] mx-auto group-hover:bg-primary transition-all duration-300 bg-blue-300 rounded py-3 font-semibold text-xl text-white flex justify-center gap-2 mb-0"
         >

@@ -3,6 +3,7 @@ import { toast } from "sonner";
 
 const initialState = {
   products: [],
+  quantity: 0,
 };
 
 const cartSlice = createSlice({

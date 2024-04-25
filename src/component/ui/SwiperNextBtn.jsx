@@ -4,6 +4,7 @@ const SwiperNextBtn = () => {
   const swiper = useSwiper();
   return (
     <div>
+      {/* custom swipper next button design  */}
       <button
         onClick={() => swiper.slideNext()}
         className="text-white p-[6px] rounded-sm bg-primary hover:bg-blue-500 transition-all"

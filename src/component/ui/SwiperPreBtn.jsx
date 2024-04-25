@@ -4,6 +4,7 @@ const SwiperPreBtn = () => {
   const swiper = useSwiper();
   return (
     <div>
+      {/* custom swipper previous button design  */}
       <button
         onClick={() => swiper.slidePrev()}
         className="text-white p-[6px] rounded-sm bg-primary hover:bg-blue-500 transition-all"

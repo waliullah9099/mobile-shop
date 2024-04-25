@@ -12,15 +12,15 @@ const Header = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between h-24 w-11/12 mx-auto">
+    <nav className="flex items-center justify-between h-24 md:w-11/12 mx-auto">
       <div className="text-white">
         <img className="w-52 text-white bg-red-600" src={logo} alt="logo" />
       </div>
       <div className="flex items-center gap-6">
         <ul
-          className={`nav-links duration-200 absolute flex md:static ${
+          className={`nav-links fixed duration-200 flex md:static ${
             isMenuOpen
-              ? "top-[14%] ml-2 pb-2 rounded bg-white w-1/2 pl-4 pr-6 space-y-4"
+              ? "top-[96px] ml- pb-2 rounded-b bg-white w-2/3 pl-4 pr-6 space-y-4"
               : "top-[-999999px]"
           } left-0 flex-col md:flex-row justify-between md:items-center md:space-x-8 text-xl z-20`}
         >
@@ -55,6 +55,7 @@ const Header = () => {
             >
               <path d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
             </svg>
+            {/* show added cart length  */}
             <span className="absolute size-6 text-sm rounded-full bg-primary text-white -top-2 left-4 md:-top-[10px] md:-right-3 flex items-center justify-center">
               {phones?.length}
             </span>
@@ -68,6 +69,7 @@ const Header = () => {
             </button>
           </li>
         </ul>
+        {/* handle response toggle menu */}
         <span
           className="text-3xl cursor-pointer md:hidden"
           onClick={toggleMenu}

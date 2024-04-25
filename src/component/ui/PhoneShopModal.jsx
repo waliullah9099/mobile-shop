@@ -4,9 +4,8 @@ import { useSelector } from "react-redux";
 const PhoneShopModal = ({ visible, onClose }) => {
   const phones = useSelector((store) => store.cart.products);
   if (!visible) return null;
+  // handle modal close
   const handleOnClose = () => {
-    // if (e.target.id === "modalContainer") {
-    // }
     onClose();
   };
 

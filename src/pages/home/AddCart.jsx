@@ -15,16 +15,18 @@ const AddCart = ({ openModal, onClose }) => {
     0
   );
 
+  // handle quantity by dispatch ===updateQuantity===
   const handleQuantity = (type, id) => {
     const payload = { type, id };
     dispatch(updateQuantity(payload));
   };
+  // handle remove product from added cart by dispatch ===removeFromCard===
   const handleRemove = (id) => {
     dispatch(removeFromCard({ id }));
   };
 
   return (
-    <div className=" w-[480px] -mr-10 bg-white shadow-2xl rounded-s-md p-6 pb-3">
+    <div className="w-[400px] md:w-[480px] -mr-10 bg-white shadow-2xl rounded-s-md p-6 pb-3">
       <div className="flex justify-between my-2 pb-6">
         <div className="flex gap-6 items-center ml-1">
           <BagIcon />
@@ -38,6 +40,7 @@ const AddCart = ({ openModal, onClose }) => {
         </button>
       </div>
       <div className="  max-h-[320px] overflow-x-scroll">
+        {/* show added card single product details  */}
         {phones?.map((phone) => (
           <CartComponent
             key={phone.id}
@@ -51,6 +54,7 @@ const AddCart = ({ openModal, onClose }) => {
         <button className="px-10 py-2 text-white bg-[#285BDB] rounded border border-primary">
           Place Order
         </button>
+        {/* if cart is empty show default totalPrice value 0 */}
         <button className="px-14 text-2xl rounded border border-[#285BDB]">
           $ {totalPrice | 0}
         </button>
